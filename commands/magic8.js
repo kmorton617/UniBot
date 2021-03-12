@@ -17,10 +17,14 @@ const magic8response = [
 ]
 
 
-module.exports = async function (msg, tokens) {
-    const index = Math.floor(Math.random() * magic8response.length);
-    const intro = Math.random() * 100;  
-    const r = Math.floor(Math.random() * intros.length);
-    msg.channel.send(intros[r]);
-    setTimeout(() => { msg.channel.send(magic8response[index]); }, 1500);
+module.exports =  {
+    name: 'magic8',
+	description: 'magic8 ball magic',
+    async execute(msg, tokens, client){
+        const index = Math.floor(Math.random() * magic8response.length);
+        const intro = Math.random() * 100;  
+        const r = Math.floor(Math.random() * intros.length);
+        msg.channel.send(intros[r]);
+        setTimeout(() => { msg.channel.send(magic8response[index]); }, 1500);
+    }
 }

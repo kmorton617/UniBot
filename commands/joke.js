@@ -7,7 +7,11 @@ const saySomethingFunny = [
     'carls face OOOOOO roasted *mlg horn sound*'
 ]
 
-module.exports = async function (msg, tokens) {
-    const index = Math.floor(Math.random() * saySomethingFunny.length);
-    msg.channel.send(saySomethingFunny[index]);
+module.exports =  {
+    name: 'joke',
+	description: 'tell a funny joke',
+    async execute(msg, tokens, client){
+        const index = Math.floor(Math.random() * saySomethingFunny.length);
+        msg.channel.send(saySomethingFunny[index]);
+    }
 }

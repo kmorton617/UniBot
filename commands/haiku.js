@@ -1,4 +1,5 @@
 module.exports = async function (msg, word) {
+    
     var response = [];
         var isSpecialCase = false;
         var nums = (word.match(/[aeiou]/gi) || []).length;
